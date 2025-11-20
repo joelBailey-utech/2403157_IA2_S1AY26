@@ -30,7 +30,7 @@
             <input type="text" id="reg_name">
             <label>Email Address</label>
             <input type="email" id="reg_email">
-            <label>Age</label>
+            
             <input type="number" id="reg_age">
             <label>Date of Birth</label>
             <input type="date" id="reg_dob">
@@ -85,17 +85,17 @@ document.getElementById("registerForm").addEventListener("submit", function(e){
     e.preventDefault();
     let name = reg_name.value.trim();
     let email = reg_email.value.trim();
-    let age = reg_age.value.trim();
+    
     let dob = reg_dob.value.trim();
     let username = reg_username.value.trim();
     let password = reg_password.value.trim();
 
-    if (!name || !email || !age || !dob || !username || !password) {
+    if (!name || !email ||  !dob || !username || !password) {
         showRegError("All fields required!");
         return;
     }
 
-    let user = { name, email, age, dob, username, password };
+    let user = { name, email, dob, username, password };
     localStorage.setItem("userAccount", JSON.stringify(user));
     alert("Account Registered!");
     closePopup("regPopup");
@@ -146,3 +146,4 @@ document.getElementById('welcomePage').addEventListener('click', function() {
 
 </body>
 </html>
+
