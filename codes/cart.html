@@ -13,18 +13,16 @@
     <a href="ecommers.html">Products</a>
     <a href="about_us.html">About Us</a>
     <a href="cart.html">Cart</a>
-    <a href="checkout.html">Checkout</a>
 </div>
 
 <div class="container">
     <h1>Your Cart</h1>
     <div id="cartContainer"></div>
     <p id="totalPrice"></p>
-    <button id="checkoutBtn">Clear Cart</button>
+    <button id="clearCartBtn">Clear All</button>
 </div>
 
 <script>
-     alert("Please persede to Checkout before you clear cart.")
 // Exchange rate USD -> JMD (example)
 const USD_TO_JMD = 155;
 
@@ -32,7 +30,7 @@ const USD_TO_JMD = 155;
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const container = document.getElementById("cartContainer");
 const totalPriceEl = document.getElementById("totalPrice");
-const checkoutBtn = document.getElementById("checkoutBtn");
+const clearCartBtn = document.getElementById("clearCartBtn");
 
 function renderCart() {
     container.innerHTML = "";
@@ -41,10 +39,10 @@ function renderCart() {
     if(cart.length === 0){
         container.innerHTML = "<p>Your cart is empty.</p>";
         totalPriceEl.textContent = "";
-        checkoutBtn.style.display = "none";
+        clearCartBtn.style.display = "none";
         return;
     }
-    checkoutBtn.style.display = "block";
+    clearCartBtn.style.display = "block";
 
     cart.forEach((item, index) => {
         total += item.price * item.quantity;
@@ -89,7 +87,7 @@ function renderCart() {
 }
 
 // Clear cart functionality
-checkoutBtn.addEventListener("click", function() {
+clearCartBtn.addEventListener("click", function() {
     if(cart.length === 0){
         alert("Your cart is already empty!");
         return;
@@ -106,6 +104,8 @@ renderCart();
 
 </body>
 </html>
+
+
 
 
 
