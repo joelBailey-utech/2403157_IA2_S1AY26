@@ -169,6 +169,11 @@ button.submit-btn:hover { background: #1d7e32; }
     cursor: pointer;
     padding: 40px;
 }
+@media (max-width: 600px) {
+    .nav_bar { flex-wrap: wrap; gap: 20px; padding: 15px 0; }
+}
+
+
 
 
 
