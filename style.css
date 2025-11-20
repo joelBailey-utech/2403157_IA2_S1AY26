@@ -9,6 +9,35 @@ body {
     align-items: flex-start;
     min-height: 100vh;
 }
+/* Apply box-sizing globally */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Popup box */
+.popup-box {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    padding: 25px 20px; /* symmetric padding left & right */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+    text-align: left;
+}
+
+/* Inputs and textarea */
+.popup-box input,
+.popup-box textarea,
+.popup-box button.submit-btn {
+    width: 100%; /* already includes box-sizing adjustment */
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
 
 /* ================= NAVIGATION BAR ================= */
 .nav_bar {
@@ -249,4 +278,5 @@ label { font-weight: bold; }
     .nav_bar { flex-direction: column; gap: 10px; padding: 10px 0; }
     h1 { font-size: 32px; }
 }
+
 
